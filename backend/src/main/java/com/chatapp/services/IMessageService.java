@@ -7,6 +7,6 @@ import java.util.List;
 public interface IMessageService {
 
 
-    public DtoMessage saveMessage(DtoMessage dtoMessage);
+    public List<DtoMessage> saveMessage(DtoMessage dtoMessage);
     public List<DtoMessage> receivedMessagesById(Integer roomId);
 }

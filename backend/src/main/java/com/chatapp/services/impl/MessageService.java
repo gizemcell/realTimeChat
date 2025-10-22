@@ -24,15 +24,13 @@ public class MessageService implements IMessageService {
 
 
     @Override
-    public DtoMessage saveMessage(DtoMessage dtoMessage) {
-        DtoMessage response=new DtoMessage();
+    public List<DtoMessage> saveMessage(DtoMessage dtoMessage) {
         MessageEntity message=new MessageEntity();
         BeanUtils.copyProperties(dtoMessage,message);
         System.out.println(message);
         MessageEntity dbMessage=messageRepository.save(message);
         System.out.println("DBmessage: "+dbMessage.toString());
-        BeanUtils.copyProperties(dbMessage,response);
-        return response;
+        return receivedMessagesById(dtoMessage.getRoomId());
     }
 
     @Override

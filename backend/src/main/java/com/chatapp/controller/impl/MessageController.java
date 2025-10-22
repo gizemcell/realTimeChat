@@ -20,7 +20,7 @@ public class MessageController implements IMessageController {
 
     @Override
     @PostMapping("/sentMessage")
-    public DtoMessage sent(@RequestBody DtoMessage dtoMessage) {
+    public List<DtoMessage> sent(@RequestBody DtoMessage dtoMessage) {
         return messageService.saveMessage(dtoMessage);
     }
 

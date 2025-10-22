@@ -9,7 +9,7 @@ public interface IMessageController {
 
 
 
-    public DtoMessage sent(DtoMessage dtoMessage);
+    public List<DtoMessage> sent(DtoMessage dtoMessage);
     public List<DtoMessage> get(Integer roomId);
     //update olabilir
 
